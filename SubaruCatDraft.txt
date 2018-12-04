@@ -1,0 +1,33 @@
+SubaruSuprimeCam Catalog Format
+
+1. Read each 'word' and check if it is a String or number
+
+2. Once it reads a number
+   Store each String word into a HEADER array
+	a) Go through each index of the array and ask if the user would like to use that header
+	   in the new catalog or not.
+		EX: "Would you like to store -----?" 
+		     Input: y
+	b) If the user says yes, then save the INDEX NUMBER into an array
+	   Update the HEADER array with only the wanted headers
+
+3. Format the DATA array
+	a) if there are 8 spaces before the next variable, enter a new line
+		EX: val"       " nextVal
+		    UPDATED:
+		    val
+		    nextVal
+4. Compare the saved INDEX NUMBER array to the index of the DATA array.
+	a) if the INDEX NUMBER and the DATA array index match
+	   then store the value inside
+
+5. Condense the DATA array futher 
+	a) if there is -99.000 or -99 in that DATA line array
+	   Delete the whole row
+	b) if the value in the dIC index is greater than -23.5
+	   Delete the whole row
+
+6. Format the output of the arrays
+	a)header+"\t"+header
+	b)same number of dashes as char count in header string
+	c)data values+"\t"+data values
